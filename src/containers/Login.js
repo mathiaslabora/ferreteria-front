@@ -45,13 +45,28 @@ function Login() {
 
       }
     }
+{/* <form class="signin">
+    <h2 style="color: #219FBC;">Ingrese sus datos:</h2><br>
+    <label for="user">Nombre de usuario o mail:</label><br>
+    <input type="inputEmail" size="30" id="user" name="user"><br>
+    <label for="pass">Contraseña:</label><br>
+    <input type="password" size="30" id="pass" name="pass"><br>
 
+    <a href="my-profile.html">No estas registrado?</a>
+    <br><br>
+
+    <label for="checkbox"></label>
+    <input type="checkbox" id="checkbox" name="checkbox">Recuerdame<br><br>
+
+    <input class="btn btn-primary" type="button" id="enviar" value="Ingresar"><br><br>
+     
+  </form> */}
     return (
       <div className="hero" >
 
         <h1 className="title" >{isRegistrando ? "Regístrate" : "Inicia sesión"}</h1>
 
-        <form className="form-login" onSubmit={submitHandler}>
+        <form className="signin" onSubmit={submitHandler}>
           <label className="from-login-label" >
             Correo electrónico:
             <input type="email" id="email" />
