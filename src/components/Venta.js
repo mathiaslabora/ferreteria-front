@@ -34,7 +34,7 @@ const Venta = () => {//traigo datos del store con el dispatch:
         <div className='col-2'>
           <h1>Facturacion</h1>
           {/* articulos */}
-          <form className='form'>
+          <form className=''>
           <label className="form-label">Articulos:</label>
           <select ref={selectListA}>
             <option>Escoja un articulo</option>
