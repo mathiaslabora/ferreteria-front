@@ -5,7 +5,7 @@ import Venta from "../components/Venta";
 import IngresoArticulos from '../components/IngresoArticulos';
 import Articulos from "../components/ArticulosList"
 import VentasList from '../components/VentasList';
-import PersonasList from '../components/PersonList'
+import PersonasList from '../components/PersonasList'
 function RoutesF() {
 
     return (

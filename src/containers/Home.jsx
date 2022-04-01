@@ -4,12 +4,6 @@ import Navbar from '../components/Navbar';
 import { Provider } from "react-redux"
 import store from "../store/index"
 import RoutesF from "../router/Routes"
-import IngresoPersonas from "../components/IngresoPersonas"
-import Venta from "../components/Venta";
-import IngresoArticulos from '../components/IngresoArticulos';
-import Articulos from "../components/ArticulosList"
-import VentasList from '../components/VentasList';
-import PersonasList from '../components/PersonList'
 function Home({ user }) {
   return (
     <Provider store={store}>

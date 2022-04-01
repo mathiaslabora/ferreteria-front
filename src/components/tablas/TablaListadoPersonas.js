@@ -12,7 +12,7 @@ const { listP } = useSelector(state => state.personas);
       const columns = React.useMemo(
         () => [
           {
-            Header: 'Nomber',
+            Header: 'Nombre',
             accessor: 'nombre', 
           },
           {
