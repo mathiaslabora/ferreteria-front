@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {fetchAllArticulos} from "../store/slices/inventario"
 import { useDispatch, useSelector } from "react-redux"
-import Tabla from './Tabla'
+import Tabla from './tablas/Tabla'
 
 
 
@@ -12,7 +12,6 @@ const Articulos = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("estoy aca")
     dispatch(fetchAllArticulos());
   }, [dispatch])
   
@@ -20,9 +19,9 @@ const Articulos = () => {
  
 
   
-  return (
-
-    <Tabla/>)
+  return (<>
+<h1>Listado De Articulos:</h1>
+    <Tabla/></>)
   
 
 }

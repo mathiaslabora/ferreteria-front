@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, collection, setDoc } from "firebase/firestore";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const auth = getAuth();
 
@@ -45,56 +46,49 @@ function Login() {
 
       }
     }
-{/* <form class="signin">
-    <h2 style="color: #219FBC;">Ingrese sus datos:</h2><br>
-    <label for="user">Nombre de usuario o mail:</label><br>
-    <input type="inputEmail" size="30" id="user" name="user"><br>
-    <label for="pass">Contraseña:</label><br>
-    <input type="password" size="30" id="pass" name="pass"><br>
 
-    <a href="my-profile.html">No estas registrado?</a>
-    <br><br>
-
-    <label for="checkbox"></label>
-    <input type="checkbox" id="checkbox" name="checkbox">Recuerdame<br><br>
-
-    <input class="btn btn-primary" type="button" id="enviar" value="Ingresar"><br><br>
-     
-  </form> */}
     return (
-      <div className="hero" >
 
-        <h1 className="title" >{isRegistrando ? "Regístrate" : "Inicia sesión"}</h1>
 
-        <form className="signin" onSubmit={submitHandler}>
-          <label className="from-login-label" >
+      
+      <div className="container" >
+<div className="row m-5 justify-content-center">
+  <div className="mb-3 mt-3 col-auto  card">
+            <h1 className="title" >{isRegistrando ? "Regístrate" : "Inicia sesión"}</h1>
+
+        <form className="form-login" onSubmit={submitHandler}>
+          <div className="input-group justify-content-between ">
+          <label className="input-group-text" >
             Correo electrónico:
-            <input type="email" id="email" />
+            <input className="form-control" type="email" id="email" />
           </label>
 
-          <label>
+          <label className="input-group-text">
             Contraseña:
-            <input type="password" id="password" />
+            <input className="form-control" type="password" id="password" />
           </label>
-
-          <label>
+          
+          <label className="input-group-text">
             Rol:
-            <select id="rol">
+            <select className="form-select" id="rol">
               <option value="admin">Administrador</option>
               <option value="user">Vendedor</option>
             </select>
           </label>
-
-          <input
+          </div>
+          <input className="btn btn-primary mt-3"
             type="submit"
             value={isRegistrando ? "Registrar" : "Iniciar sesión"}
           />
         </form>
 
-        <button className="form-login" onClick={() => setIsRegistrando(!isRegistrando)}>
+        <button className="btn btn-primary mt-3 mb-3" onClick={() => setIsRegistrando(!isRegistrando)}>
           {isRegistrando ? "Ya tengo una cuenta" : "Quiero registrarme"}
         </button>
       </div>
+      </div>
+      </div>
+
     );
   }
 

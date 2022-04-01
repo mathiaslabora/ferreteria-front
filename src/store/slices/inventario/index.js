@@ -18,7 +18,7 @@ export const { setArticulos } = articulosSlice.actions
 export default articulosSlice.reducer
 
 export const fetchAllArticulos =  () => async (dispatch) => {
-    console.log("estoy aca")
+    
    await fetch("http://localhost:8080/articulos")
         .then(response => response.json())
         .then((data) => {

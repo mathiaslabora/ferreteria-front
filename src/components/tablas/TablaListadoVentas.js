@@ -1,41 +1,37 @@
 import React from 'react'
-//import ReactTable from 'react-table'
 import { useTable } from 'react-table'
 import { useSelector } from "react-redux"
 
+const TablaListadoVentas = ()=>{
 
+const { listV } = useSelector(state => state.ventas);
+    const data =listV;
+    console.log(listV)
 
-const Tabla = () => {
-    const { list } = useSelector(state => state.inventario);
-    const data =list;
-    console.log(list)
- /* const data = React.useMemo(
-        () =>  list,
-        []
-      ) */
     
       const columns = React.useMemo(
         () => [
           {
-            Header: 'Articulo',
-            accessor: 'articulo', // accessor is the "key" in the data
+            Header: 'Consecutivo-Factura',
+            accessor: 'consecutivoFactura', 
           },
           {
-            Header: 'Stock',
-            accessor: 'stock',
+            Header: 'Cliente',
+            accessor: 'nombreCliente',
           },
           {
-            Header: 'Stock Minimo',
-            accessor: 'stockMinimo',
+            Header: 'Fecha de Compra',
+            accessor: 'fecha',
+          },{
+            Header: 'Vendedor',
+            accessor: 'nombreVendedor',
           },
           {
-            Header: 'Stock Maximo',
-            accessor: 'stockMaximo',
+            Header: 'Costo Total',
+            accessor: 'costoTotal',
           },
-          {
-            Header: 'Proveedor',
-            accessor: 'proveedor',
-          },
+
+          
           ],
         []
       )
@@ -93,8 +89,8 @@ const Tabla = () => {
             })}
           </tbody>
         </table>
-      )
-    }
+         )
 
+}
 
-export default Tabla
+export default TablaListadoVentas;

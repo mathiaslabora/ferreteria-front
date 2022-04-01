@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom"
-import Navbar from './components/Navbar';
-import Articulos from './components/ArticulosList'
-import { Provider } from "react-redux"
-import store from "./store/index"
-import Tabla from './components/Tabla';
+
 import firebaseApp from "./firebase/credentials";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -54,7 +50,11 @@ function App() {
 
 
   return (  user ? <Home user={user}/> : <Login/>)
-    {/* <Provider store={store}>
+   
+  
+  
+  
+  {/* <Provider store={store}>
 <Articulos />
 
       <Navbar />
