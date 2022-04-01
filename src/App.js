@@ -32,7 +32,7 @@ function App() {
       };
       setUser(userData);
       console.log("userData fianl", userData);
-    });
+    }).catch(err=>console.log(err));
   }
 
   onAuthStateChanged(auth, (usuarioFirebase) => {
@@ -49,27 +49,7 @@ function App() {
 
 
 
-  return (  user ? <Home user={user}/> : <Login/>)
-   
-  
-  
-  
-  {/* <Provider store={store}>
-<Articulos />
-
-      <Navbar />
-
-         
-      <div>
-
-        <Routes>
-           <Route path="/" element={} />
-        </Routes>
-        <h1>hola</h1>
-        <Tabla />
-      </div>
-
-    </Provider> */} 
+  return (  user ? <Home user={user}/> : <Login/>) 
   
 }
 

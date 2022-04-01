@@ -15,8 +15,9 @@ const Navbar = ({ user }) => {
            <a className='navbar-brand' href='/'>Ferrreteria RAUL</a>
           
           <h1  >Home</h1>
-          <button onClick={() => signOut(auth)}> Cerrar sesión</button>
           {user.rol === "admin" ? <AdminView /> : <UserView />}
+          <button className='btn btn-primary' onClick={() => signOut(auth)}> Cerrar sesión</button>
+          
    
      
       

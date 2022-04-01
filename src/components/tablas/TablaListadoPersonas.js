@@ -19,7 +19,14 @@ const { listP } = useSelector(state => state.personas);
             Header: 'Documento Identidad',
             accessor: 'documentoIdentidad',
           },
-          
+          {
+            Header: 'Cliente/Proveedor',
+            accessor: 'tipo',
+          },
+          {
+            Header: 'Nro telefono',
+            accessor: 'telefono',
+          },
 
           
           ],
@@ -43,8 +50,8 @@ const { listP } = useSelector(state => state.personas);
                   <th
                     {...column.getHeaderProps()}
                     style={{
-                      borderBottom: 'solid 3px red',
-                      background: 'aliceblue',
+                      border: 'solid 1px blue',
+                      background: 'yellow',
                       color: 'black',
                       fontWeight: 'bold',
                     }}
