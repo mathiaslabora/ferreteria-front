@@ -1,3 +1,4 @@
+import { async } from '@firebase/util'
 import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { fetchAllArticulos } from "../store/slices/inventario"
@@ -20,12 +21,16 @@ const Venta = () => {//traigo datos del store con el dispatch:
   const selectListA = useRef(null);
   const selectListCli = useRef(null);
   const listToAdd = useRef(null);
+  const vendedor = useRef(null);
+  const descripcion = useRef(null);
+
 
   //setArticulos("gola")
   list.map(a => selectListA.current.innerHTML += `<option value=${a.articulo}>${a.articulo}</option>`)
   listP.map(a => selectListCli.current.innerHTML += `<option value=${a.nombre}>${a.nombre}</option>`)
   //datal.current.innerHTML=articulos;
   let objArt = []
+  let sumaTotal;
   const cantidad = useRef(null);
 
   const costo = useRef(null);
@@ -39,11 +44,39 @@ const Venta = () => {//traigo datos del store con el dispatch:
       costo: costo.current.value,
       cantidad: cantidad.current.value
     })
+    sumaTotal+=costo.current.value
     objArt.map(a => listToAdd.current.innerHTML += `<li>${a.articulo} - ${a.costo} - ${a.cantidad}</li>`)
     console.log(objArt)
   }
 
-  const submitFact = () => {
+  const submitFact = async (e) => {
+    e.preventDefault();
+    
+    let objToFetch = {
+      productosComprados: objArt,
+      costoTotal: sumaTotal,
+      descripcion: descripcion,
+      nombreCliente: selectListCli,
+      nombreVendedor: vendedor
+    }
+
+
+    try {
+      const response = await fetch("http://localhost:8080/ventaconcretada", {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(
+            objToFetch
+          )
+       });
+       const data = await response.json();
+       console.log(data);
+     } catch(error) {
+
+        console.log(error)
+       } 
 
   }
 
@@ -55,9 +88,11 @@ const Venta = () => {//traigo datos del store con el dispatch:
         <h1>Facturacion</h1>
 
         <form onSubmit={submitFact}>
+        <label>Vendedor</label>
+          <input className="form-control" ref={vendedor} placeholder='Vendedor:'></input>
           {/* cliente */}
           <label className="form-label">Cliente:</label>
-          <select className="form-select" id="cliente" ref={selectListCli}>
+          <select className="form-select" ref={selectListCli}>
            
           </select>
           {/* articulos */}
@@ -71,11 +106,11 @@ const Venta = () => {//traigo datos del store con el dispatch:
           <label>Cantidad</label>
           <input className="form-control" ref={cantidad} placeholder='Cantidad'></input>
           <button className="btn btn-primary btn-sm mb-3 mt-3" onClick={addArt} >Agregar Producto</button>
-          <textarea placeholder='Descripcion' className="form-control" ></textarea>
+          <textarea placeholder='Descripcion' ref={descripcion} className="form-control" ></textarea>
           <button className='btn btn-danger btn-lg mb-3 mt-3 '>Facturar</button>
         </form>
       </div>
-      <div className='col-5'>
+      <div className='m-5 card col-5'>
         <div ref={listToAdd}></div>
       </div>
     </div>
