@@ -15,9 +15,9 @@ const VentasList = () => {
   
   console.log(listV)
   
-  return (<>
+  return (<div className='row justify-content-center'>
     <h1>Listado De Ventas:</h1>
-        <TablaListadoVentas/></>)
+        <TablaListadoVentas/></div>)
 
 }
 

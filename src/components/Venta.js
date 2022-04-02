@@ -30,11 +30,11 @@ const Venta = () => {//traigo datos del store con el dispatch:
   listP.map(a => selectListCli.current.innerHTML += `<option value=${a.nombre}>${a.nombre}</option>`)
   //datal.current.innerHTML=articulos;
   let objArt = []
-  let sumaTotal;
+  let sumaTotal=0;
   const cantidad = useRef(null);
 
   const costo = useRef(null);
-
+  
 
   const addArt = (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ const Venta = () => {//traigo datos del store con el dispatch:
       costo: costo.current.value,
       cantidad: cantidad.current.value
     })
-    sumaTotal+=costo.current.value
+    sumaTotal= sumaTotal+ parseFloat(costo.current.value) * parseFloat(cantidad.current.value)
     objArt.map(a => listToAdd.current.innerHTML += `<li>${a.articulo} - ${a.costo} - ${a.cantidad}</li>`)
     console.log(objArt)
   }
@@ -55,11 +55,11 @@ const Venta = () => {//traigo datos del store con el dispatch:
     let objToFetch = {
       productosComprados: objArt,
       costoTotal: sumaTotal,
-      descripcion: descripcion,
-      nombreCliente: selectListCli,
-      nombreVendedor: vendedor
+      descripcion: descripcion.current.value,
+      nombreCliente: selectListCli.current.value,
+      nombreVendedor: vendedor.current.value
     }
-
+console.log(objToFetch)
 
     try {
       const response = await fetch("http://localhost:8080/ventaconcretada", {

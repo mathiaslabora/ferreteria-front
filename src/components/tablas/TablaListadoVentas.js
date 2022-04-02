@@ -56,8 +56,8 @@ const { listV } = useSelector(state => state.ventas);
                   <th
                     {...column.getHeaderProps()}
                     style={{
-                      borderBottom: 'solid 3px red',
-                      background: 'aliceblue',
+                      border: 'solid 1px black',
+                      background: 'Thistle',
                       color: 'black',
                       fontWeight: 'bold',
                     }}
@@ -80,7 +80,7 @@ const { listV } = useSelector(state => state.ventas);
                         style={{
                           padding: '10px',
                           border: 'solid 1px gray',
-                          background: 'papayawhip',
+                          background: 'Lavender',
                         }}
                       >
                         {cell.render('Cell')}
