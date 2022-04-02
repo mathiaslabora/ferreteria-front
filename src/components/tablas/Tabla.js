@@ -55,7 +55,7 @@ const Tabla = () => {
                     {...column.getHeaderProps()}
                     style={{
                       borderBottom: 'solid 3px red',
-                      background: 'aliceblue',
+                      background: 'Lavender',
                       color: 'black',
                       fontWeight: 'bold',
                     }}

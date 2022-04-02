@@ -19,9 +19,9 @@ const Articulos = () => {
 
 
 
-  return (<>
+  return (<div className='row justify-content-center'>
     <h1>Listado De Articulos:</h1>
-    <Tabla /></>)
+    <Tabla /></div>)
 
 
 }

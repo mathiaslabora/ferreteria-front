@@ -9,7 +9,7 @@ function Home({ user }) {
     <Provider store={store}>
       <Navbar user={user} />
       
-        <div className="row justify-content-center">
+        <div className="row ">
           
           <h2 >Bienvenido, Que desea hacer?</h2>
           <nav className="navbar navbar-dark bg-dark">

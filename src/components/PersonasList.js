@@ -15,9 +15,9 @@ const PersonasList = () => {
   
   console.log(listP)
   
-  return (<>
+  return (<div className='row justify-content-center'>
     <h1>Listado De Clientes - Proveedores:</h1>
-        <TablaListadoPersonas/></>)
+        <TablaListadoPersonas/></div>)
 
 }
 
