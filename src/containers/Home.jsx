@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar';
 import { Provider } from "react-redux"
 import store from "../store/index"
@@ -10,6 +10,7 @@ function Home({ user }) {
       <Navbar user={user} />
       
         <div className="row justify-content-center">
+          
           <h2 >Bienvenido, Que desea hacer?</h2>
           <nav className="navbar navbar-dark bg-dark">
             <div className="container-fluid ">
@@ -25,7 +26,7 @@ function Home({ user }) {
       
       <div className="container">
         <RoutesF />
-       
+      
       </div>
 
     </Provider>

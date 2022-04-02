@@ -3,7 +3,6 @@ import AdminView from "../components/AdminView";
 import UserView from "../components/UserView";
 import firebaseApp from "../firebase/credentials";
 import { getAuth, signOut } from "firebase/auth";
-import { Link } from "react-router-dom"
 
 const auth = getAuth(firebaseApp);
 

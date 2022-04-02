@@ -32,6 +32,7 @@ const Tabla = () => {
             Header: 'Proveedor',
             accessor: 'proveedor',
           },
+          
           ],
         []
       )

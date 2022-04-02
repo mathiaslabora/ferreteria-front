@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom"
 
 import firebaseApp from "./firebase/credentials";
 import { getAuth, onAuthStateChanged } from "firebase/auth";

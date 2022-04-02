@@ -30,7 +30,10 @@ const { listV } = useSelector(state => state.ventas);
             Header: 'Costo Total',
             accessor: 'costoTotal',
           },
-
+          {
+            Header: 'Datos',
+            accessor: 'descripcion',
+          },
           
           ],
         []
